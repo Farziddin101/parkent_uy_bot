@@ -105,7 +105,7 @@ async def send_lakeside_gallery(call: types.CallbackQuery, state: FSMContext):
         message_ids.append(menu_msg.message_id)
         await state.update_data(gallery_messages=message_ids)
     except Exception as e:
-        logging.error(f"JSON faylni o'qishda xatolik: {e}")
+        logging.error(f"JSON faylni o'qishda xatolikfwefewfwefewfwe: {e}")
 
 
 @dp.callback_query_handler(lambda c: c.data == "lakeside_residence_location", state=Form.LAKESIDE_MAIN)

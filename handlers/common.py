@@ -4,8 +4,7 @@ from loader import dp, bot
 from keyboards.inline.inline import start_keyboard
 from states.states import Form
 import logging
-from keyboards.inline.inline import (
-    parkent_main_keyboard, parkent_ready_keyboard, parkent_under_construction_keyboard,
+from keyboards.inline.inline import (parkent_main_keyboard, parkent_ready_keyboard, parkent_under_construction_keyboard,
     lakeside_main_keyboard, lakeside_purchase_options, full_payment_options, discount_payment_options, credit_payment_options
 )
 
