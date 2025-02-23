@@ -10,5 +10,5 @@ os.environ['TZ'] = 'Asia/Tashkent'
 
 
 BOT_TOKEN = "7921414575:AAGWAlfFGLhrNCDgIPxAaFvKOrogTCAcbDU"
-ADMINS = [5065548183, 7818284462, 1954593467,]  # O'z Telegram ID'ingizni kiriting
+ADMINS = [5065548183, 7818284462,]  # O'z Telegram ID'ingizni kiriting
 
