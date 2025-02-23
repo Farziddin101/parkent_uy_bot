@@ -1,0 +1,15 @@
+venv
+.idea
+.env
+main.py
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+handlers/__pycache__/
+keyboards/inline/__pycache__/
+states/__pycache__/
+middlewares/__pycache__/
+utils/__pycache__/
+data/__pycache__/
+__pycache__
