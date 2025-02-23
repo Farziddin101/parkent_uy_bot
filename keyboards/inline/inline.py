@@ -110,6 +110,8 @@ def create_payment_options(prefix: str) -> InlineKeyboardMarkup:
 
     keyboard.add(InlineKeyboardButton("⬅️ Орқага", callback_data="lakeside_residence_under_construction"))
     keyboard.add(InlineKeyboardButton("🏠 Бош сахифа", callback_data="main_menu"))
+
+    
     return keyboard
 
 def full_payment_options() -> InlineKeyboardMarkup:
