@@ -10,7 +10,9 @@ USER_DATA_FILE = "users.json"  # Foydalanuvchilar ro‘yxatini saqlash fayli
 async def get_users(message: types.Message):
     admin_id = message.from_user.id  # Foydalanuvchi ID sini olamiz
 
-    if admin_id not in ADMINS:  # Faqat adminlar uchun
+    if admin_id not in ADMINS:  # 
+
+        
         await message.answer("❌ Сизга бу буйруқдан фойдаланишга рухсат йўқ!")
         return
 
