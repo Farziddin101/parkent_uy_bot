@@ -97,6 +97,7 @@ def create_payment_options(prefix: str) -> InlineKeyboardMarkup:
         ("56.98", "2 хонали хонадон"),
         ("57.49", "2 хонали хонадон"),
         ("62.00", "2 хонали хонадон"),
+        
         ("80.26", "3 хонали хонадон"),
         ("83.57", "3 хонали хонадон"),
         ("87.94", "3 хонали хонадон"),
@@ -111,7 +112,7 @@ def create_payment_options(prefix: str) -> InlineKeyboardMarkup:
     keyboard.add(InlineKeyboardButton("⬅️ Орқага", callback_data="lakeside_residence_under_construction"))
     keyboard.add(InlineKeyboardButton("🏠 Бош сахифа", callback_data="main_menu"))
 
-    
+
     return keyboard
 
 def full_payment_options() -> InlineKeyboardMarkup:
