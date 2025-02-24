@@ -5,7 +5,7 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from keyboards.inline.inline import (
-    parkent_main_keyboard, parkent_ready_keyboard,
+    credit_ready_keyboard, parkent_main_keyboard, parkent_ready_keyboard,
     subsidya_ready_keyboard, full_payment_keyboard,
     parkent_under_construction_keyboard, subsidya_under_construction_keyboard, full_payment_under_construction_keyboard,
 )
@@ -293,7 +293,7 @@ async def full_payment_2_rooms(call: types.CallbackQuery, state: FSMContext):
     """2 хонали хонадон (100% тўлов) rasmni yuborish."""
     await call.answer()
 
-    photo_path = "images/2xona100.jpg"
+    photo_path = "images/2xona1001.jpg"
     caption_text = "🏠 *2 хонали хонадон*"
     markup = full_payment_keyboard()
 
@@ -323,9 +323,78 @@ async def full_payment_3_rooms(call: types.CallbackQuery, state: FSMContext):
     await call.answer()
 
 
-    photo_path = "images/3xona100.jpg"
+    photo_path = "images/3xona1001.jpg"
     caption_text = "🏠 *3 хонали хонадон*"
     markup = full_payment_keyboard()
+
+    if call.message.photo:
+        try:
+            photo = types.InputMediaPhoto(media=types.InputFile(photo_path), caption=caption_text, parse_mode="Markdown")
+            await call.message.edit_media(photo, reply_markup=markup)
+        except Exception:
+            pass
+    else:
+        try:
+            await bot.send_photo(
+                chat_id=call.message.chat.id,
+                photo=InputFile(photo_path),
+                caption=caption_text,
+                parse_mode="Markdown",
+                reply_markup=markup,
+            )
+            await call.message.delete()
+        except Exception:
+            pass
+@dp.callback_query_handler(lambda c: c.data == "credit_ready", state=Form.PARKENT_READY)
+async def credit_ready_info(call: types.CallbackQuery, state: FSMContext):
+    """Кредит асосда сотиб олиш tugmasi bosilganda ishlaydi."""
+    await call.answer()
+
+    message_text = "*💳 Кредит асосида сотиб олиш учун:*"
+
+    await call.message.edit_text(
+        text=message_text,
+        parse_mode="Markdown",
+        reply_markup=credit_ready_keyboard()  # Yangi tugmalar qatori
+    )
+
+@dp.callback_query_handler(lambda c: c.data == "credit_2_rooms_ready", state=Form.PARKENT_READY)
+async def credit_2_rooms(call: types.CallbackQuery, state: FSMContext):
+    """2 хонали хонадон (Кредит асосида) rasmni yuborish yoki yangilash."""
+    await call.answer()
+
+    photo_path = "images/2xonakreditt.jpg"  # Yangi rasm manzili
+    caption_text = "🏠 *2 хонали хонадон (Кредит асосида)*"
+    markup = credit_ready_keyboard()
+
+    if call.message.photo:
+        try:
+            photo = types.InputMediaPhoto(media=types.InputFile(photo_path), caption=caption_text, parse_mode="Markdown")
+            await call.message.edit_media(photo, reply_markup=markup)
+        except Exception:
+            pass
+    else:
+        try:
+            await bot.send_photo(
+                chat_id=call.message.chat.id,
+                photo=InputFile(photo_path),
+                caption=caption_text,
+                parse_mode="Markdown",
+                reply_markup=markup,
+            )
+            await call.message.delete()
+        except Exception:
+            pass
+
+
+@dp.callback_query_handler(lambda c: c.data == "credit_3_rooms_ready", state=Form.PARKENT_READY)
+async def credit_3_rooms(call: types.CallbackQuery, state: FSMContext):
+    """3 хонали хонадон (Кредит асосда) rasmni yuborish yoki yangilash."""
+    await call.answer()
+
+    photo_path = "images/3xonakreditt.jpg"  # Yangi rasm manzili
+    caption_text = "🏠 *3 хонали хонадон (Кредит асосида)*"
+    markup = credit_ready_keyboard()
 
     if call.message.photo:
         try:
