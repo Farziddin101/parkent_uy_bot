@@ -15,12 +15,20 @@ def parkent_main_keyboard():
     keyboard.add(InlineKeyboardButton("⬅️ Орқага", callback_data='main_menu'))
     keyboard.add(InlineKeyboardButton("🏠 Бош сахифа", callback_data="main_menu"))
     return keyboard
-
 def parkent_ready_keyboard():
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(InlineKeyboardButton("Субсидия асосида сотиб олиш", callback_data="subsidya_ready"))
     keyboard.add(InlineKeyboardButton("100%лик тўлов асосида сотиб олиш", callback_data="full_payment_ready"))
+    keyboard.add(InlineKeyboardButton("Кредит асосда сотиб олиш", callback_data="credit_ready"))  # Yangi tugma
     keyboard.add(InlineKeyboardButton("⬅️ Орқага", callback_data="parkent_village"))
+    keyboard.add(InlineKeyboardButton("🏠 Бош сахифа", callback_data="main_menu"))
+    return keyboard
+
+def credit_ready_keyboard():
+    keyboard = InlineKeyboardMarkup()
+    keyboard.add(InlineKeyboardButton("2 хонали хонадон", callback_data="credit_2_rooms_ready"))
+    keyboard.add(InlineKeyboardButton('3 хонали хонадон', callback_data='credit_3_rooms_ready'))
+    keyboard.add(InlineKeyboardButton("⬅️ Орқага", callback_data="parkent_village_ready"))
     keyboard.add(InlineKeyboardButton("🏠 Бош сахифа", callback_data="main_menu"))
     return keyboard
 

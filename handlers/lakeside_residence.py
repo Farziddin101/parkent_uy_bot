@@ -69,7 +69,7 @@ async def lakeside_residence_discount(call: types.CallbackQuery, state: FSMConte
 async def lakeside_residence_credit(call: types.CallbackQuery, state: FSMContext):
     """Kredit asosida sotib olish."""
     await call.message.edit_text(
-        text='*Кредит асосида сотиб олиш:*',
+        text='*💳 Кредит асосида сотиб олиш:*',
         parse_mode="Markdown",
         reply_markup=credit_payment_options()
     )
@@ -136,7 +136,7 @@ async def lakeside_full_payment_rooms(call: types.CallbackQuery, state: FSMConte
     try:
         await bot.send_message(
             chat_id=call.message.chat.id,
-            text=f"🏠 *100%лик тўлов асосида сотиб олиш:*",
+            text=f"💰 *100%лик тўлов асосида сотиб олиш:*",
             parse_mode="Markdown",
             reply_markup=full_payment_options(),
         )
