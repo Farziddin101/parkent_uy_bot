@@ -33,11 +33,6 @@ async def get_users(message: types.Message):
         await message.answer("👤  Ҳали ҳеч ким рўйхатдан ўтмаган..")
         return
 
-    user_list = "\n".join([
-        f"{u.get('full_name', 'Nomalum')} (@{u.get('username', 'Nomalum')}) (ID: <code>{u['id']}</code>)"
-        for u in users
-    ])
-
-    response = f"👥 Умумий фойдаланувчилар сони: {len(users)}\n\n📜 Фойдаланувчилар рўйхати:\n{user_list}"
+    response = f"👥 Умумий фойдаланувчилар сони: {len(users)} та"
     
-    await message.answer(response, parse_mode="HTML")
+    await message.answer(response)

@@ -168,7 +168,7 @@ async def subsidya_2_rooms(call: types.CallbackQuery, state: FSMContext):
     """2 хонали хонадон (Субсидия асосида) rasmni yuborish yoki yangilash."""
     await call.answer()
 
-    photo_path = "images/2xona100.jpg"
+    photo_path = "images/2xonaSubsidiya.jpg"
     caption_text = "🏠 *2 хонали хонадон*"
 
     # Inline tugmalarni saqlash
@@ -201,7 +201,7 @@ async def subsidya_3_rooms(call: types.CallbackQuery, state: FSMContext):
     """3 хонали хонадон (Субсидия асосида) rasmni yuborish yoki yangilash."""
     await call.answer()
 
-    photo_path = "images/3xona100.jpg"
+    photo_path = "images/3xonaSubsidiya.jpg"
     caption_text = "🏠 *3 хонали хонадон*"
 
     markup = subsidya_ready_keyboard()
